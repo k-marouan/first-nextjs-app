@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 
 export default function Home() {
   const router = useRouter()
+  const model = "2024"
+  const id = 10231
 
   return (
     <>
@@ -11,7 +13,11 @@ export default function Home() {
       <br />
       <Link href="/newpage">Go to new pages!</Link>{/* on click => show the result without refresh the page */}
       <br />
-      <button onClick={ () => {router.push('/about')} }>Go to about pages!</button>
+      <button onClick={ () => {router.push('/about')} }>Go to about pages!</button>{/* on click => show the result without refresh the page */}
+      <br />
+      <button onClick={ () => {router.push('/cars/2023/10177')} }>Go to BMW cars!</button>
+      <br />
+      <button onClick={ () => {router.push(`/cars/${model}/${id}`)} }>Go to BMW cars!</button>
     </>
   )
 }
